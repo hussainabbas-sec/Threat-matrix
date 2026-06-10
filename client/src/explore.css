@@ -1,0 +1,169 @@
+.exploreContainer {
+  min-height: 100vh;
+  background: #020617;
+  color: white;
+  padding-bottom: 80px;
+}
+
+/* 🔥 HERO */
+.exploreHero {
+  padding: 80px 80px 40px;
+}
+
+.exploreLeft h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.exploreLeft span {
+  color: #8b5cf6;
+  text-shadow: 0 0 20px rgba(139,92,246,0.7);
+}
+
+.exploreLeft p {
+  color: #9ca3af;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.backBtn {
+  margin-top: 25px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 1px solid #6366f1;
+  background: transparent;
+  color: #a5b4fc;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.backBtn:hover {
+  background: rgba(99,102,241,0.15);
+  box-shadow: 0 0 12px #6366f1;
+}
+
+/* 🔥 GRID */
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 40px 80px;
+}
+
+/* 🔥 CARD */
+.featureCard {
+  position: relative;
+  padding: 30px;
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(99,102,241,0.2);
+
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+/* glow animation */
+.featureCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(99,102,241,0.4),
+    transparent
+  );
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.featureCard:hover::before {
+  opacity: 1;
+}
+
+.featureCard:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow:
+    0 0 20px rgba(99,102,241,0.6),
+    0 0 40px rgba(99,102,241,0.3);
+}
+
+/* 🔥 ICON */
+.iconWrap {
+  margin-bottom: 15px;
+}
+
+.cardIcon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+
+  filter:
+    brightness(1.2)
+    drop-shadow(0 0 8px #6366f1)
+    drop-shadow(0 0 16px #6366f1);
+
+  transition: 0.4s;
+}
+
+.featureCard:hover .cardIcon {
+  transform: scale(1.15);
+  filter:
+    brightness(1.5)
+    drop-shadow(0 0 12px #8b5cf6)
+    drop-shadow(0 0 25px #8b5cf6);
+}
+
+/* 🔥 TEXT */
+.featureCard h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.featureCard p {
+  font-size: 14px;
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
+.featureCard:hover h3 {
+  color: #a78bfa;
+  text-shadow: 0 0 10px rgba(139,92,246,0.8);
+}
+/* 🔥 BACKGROUND CANVAS */
+#exploreCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ensure content above */
+.exploreContainer {
+  position: relative;
+  z-index: 2;
+}
+
+/* divider */
+.sectionDivider {
+  width: 100%;
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(99,102,241,0.5),
+    transparent
+  );
+
+  margin: 20px 80px 10px;
+}
